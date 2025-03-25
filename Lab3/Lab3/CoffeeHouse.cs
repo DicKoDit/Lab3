@@ -32,10 +32,13 @@ namespace Lab3
                 .FirstOrDefault();
         }
 
+        //Сборка всей инфы о заказе: Имя клиента, Что заказано
         public void MakeOrder(Client client, List<Food> food, bool delivery)
         {
-            Console.WriteLine($"Получен новый заказ: {string.Join(", ", food.Select(f => f.Name))}, от клиента {client.Name}");
+            Console.WriteLine($"================================\n" +
+                $"Получен новый заказ: {string.Join(", ", food.Select(f => f.Name))}, от клиента {client.Name}");
             Order order = new Order { Foods = food, Delivery = delivery };
+
             // Проверка баланса перед обработкой заказа
             double totalPrice = food.Sum(f => Menu.FirstOrDefault(m => m.Name == f.Name)?.Price ?? 0);
             if (client.Balance < totalPrice)

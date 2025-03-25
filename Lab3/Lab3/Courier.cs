@@ -13,8 +13,11 @@ namespace Lab3
     {
         public string Name { get; set; }
         public int Rating { get; set; }
-        public bool IsAvailable { get; set; } = true;
+        public bool IsAvailable { get; set; } = true; 
         public List<Order> AssignedOrders = new List<Order>();
+
+        // Событие для уведомления что Курьер взял заказ
+        public event Action<string> OnCourierUpdate;
         public event Action<Courier> DeliveryNotify;
 
         public void Delivery(CoffeeHouse sender, OrderEventArgs e)
@@ -22,9 +25,15 @@ namespace Lab3
             if (IsAvailable && AssignedOrders.Count < 3)
             {
                 AssignedOrders.Add(e.Order);
-                Console.WriteLine($"Курьер: {Name} может принять заказ!");
-                //   Сообщаем подписчикам, что курьер принял заказ
+
+                // Передача сообщения через событие
+                OnCourierUpdate?.Invoke($"Курьер {Name} взял заказ!");
+
                 DeliveryNotify?.Invoke(this);
+            }
+            else
+            {
+                OnCourierUpdate?.Invoke($"Курьер {Name} не доступен для доставки.");
             }
         }
     }

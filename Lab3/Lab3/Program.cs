@@ -15,6 +15,8 @@ namespace Lab3
             coffeeHouse.Menu.Add(new Food { Name = "Панкейки", Price = 400 });
             coffeeHouse.Menu.Add(new Food { Name = "Капучино", Price = 250 });
             coffeeHouse.Menu.Add(new Food { Name = "Чипсы", Price = 124 });
+            coffeeHouse.Menu.Add(new Food { Name = "Вода", Price = 50 });
+            coffeeHouse.Menu.Add(new Food { Name = "ТочноНеДети", Price = 1000000 });
 
             Console.Write("Введите имя клиента: ");
             string clientName = Console.ReadLine();
@@ -28,10 +30,10 @@ namespace Lab3
             client.OnOrderProcessed += message => Console.WriteLine(message);
 
             // Регистрируем несколько курьеров с разными рейтингами
-            Courier courier1 = new Courier { Name = "Finn", Rating = 1 };
-            Courier courier2 = new Courier { Name = "John", Rating = 2 };
-            Courier courier3 = new Courier { Name = "Billy", Rating = 4 };
-            Courier courier4 = new Courier { Name = "Alice", Rating = 5 };
+            Courier courier1 = new Courier { Name = "HarryNoWizard", Rating = 1 };
+            Courier courier2 = new Courier { Name = "Ктони Стар", Rating = 2 };
+            Courier courier3 = new Courier { Name = "Billy Bons", Rating = 4 };
+            Courier courier4 = new Courier { Name = "AlicaFrame", Rating = 5 };
 
             coffeeHouse.CourierRegister(courier1);
             coffeeHouse.CourierRegister(courier2);
