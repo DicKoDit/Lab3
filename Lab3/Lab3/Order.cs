@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Lab3
 {
     /// <summary>
-    /// Класс, представляющий заказ.
+    /// Класс с заказом: Список заказанного, Финальная цена заказа и Нужна ли доставка.
     /// </summary>
     public class Order
     {

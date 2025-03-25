@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Lab3
 {
     /// <summary>
-    /// Класс, представляющий клиента.
+    /// Класс, клиента. Его Имя, баланс и что назаказывал.
     /// </summary>
     public class Client
     {

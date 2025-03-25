@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Lab3
 {
     /// <summary>
-    /// Класс, представляющий курьера.
+    /// Класс с курьером: Имя, Рейтинг, Может/Нет принять заказ и Делигат с оповищением о взятии заказа
     /// </summary>
     public class Courier
     {

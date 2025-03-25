@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Lab3
 {
     /// <summary>
-    /// Класс, представляющий параметры заказа.
+    /// Класс параметра заказа: Что в заказе, Сообщение о "готовности заказа"
     /// </summary>
     public class OrderEventArgs : EventArgs
     {

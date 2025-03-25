@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Lab3
 {
     /// <summary>
-    /// Класс, представляющий блюда.
+    /// Класс списка блюд: их Название и Цена.
     /// </summary>
     public class Food
     {
